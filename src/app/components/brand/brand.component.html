@@ -1,0 +1,35 @@
+
+
+<!-- <select class="bg-dark text-info mt-4" name="cars" id="cars">
+  <option value="araç seçin" placeholder="assdasd" class="text-secondary">araçlar</option>
+   <option class="text-info"  *ngFor="let brand of brands " [value]="brand.name">{{brand.name}}</option>
+</select> -->
+<ul class="list-group mt-4 ">
+  <li (click)="setDeletedCurrentBrand()" [class]="getAllBrandClass()"  routerLink="/cars">Tüm Markalar</li>
+  <div>
+    
+  </div>
+  <div *ngFor="let brand of brands ">
+  <li (click) ="setCurrentBrand(brand)" 
+  routerLink="/cars/brand/{{brand.name}}"
+
+  [class]= "getCurrentBrandClass(brand)" 
+  class="col-md-8"
+  style="display:inline-block" 
+  >
+    {{brand.name}} &nbsp; &nbsp;   
+  </li>
+  <a class="btn btn-warning col-md-4" style="display:inline-block ;" routerLink="/brands/update/{{brand.id}}">Güncelle</a>
+</div>
+</ul>
+
+<!-- <form [formGroup]="brandForm" (ngSubmit)="submit()">
+  <select formControlName="brand" class="form-select" aria-label="Default select example">
+    <option [ngValue]="null">Select Brand</option>
+    <option *ngFor="let brand of brands" [ngValue]="brand.id">{{brand.name}}</option>
+  </select>
+  <button type="submit">Submit</button>
+</form> -->
+
+
+  

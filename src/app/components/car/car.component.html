@@ -1,0 +1,54 @@
+<div class="row row-cols-1 row-col-md-3 g-4 mt-1">
+  <div class="card bg-dark" style="width: 18rem; margin-left:1%;" *ngFor="let car of cars">
+    <img
+      [src]="setCurrentCarImageSrc()"
+      [class]="getCurrentCarClass(car)"
+      [alt]="setCurrentCarImageAlt()"
+      height="150px"
+    />
+    <div class="card-body">
+      <p class="card-text text-light text-center">
+        {{car.carDescription}}
+      </p>
+    </div>
+    <ul class="list-group list-group-flush ">
+      <li class="list-group-item bg-dark text-light"> <strong style="color:#0dcaf0;">Marka :</strong> &nbsp; &nbsp;&nbsp; {{car.brandName}}</li>
+      <li class="list-group-item bg-dark text-light "><strong style="color:#0dcaf0;"> Renk :</strong> &nbsp; &nbsp;&nbsp; {{car.colorName}}</li>
+      <li class="list-group-item bg-dark text-light "><strong style="color:#0dcaf0;"> Model Yılı :</strong> &nbsp; &nbsp;&nbsp; {{car.modelYear}}</li>
+      <li class="list-group-item bg-dark text-light "><strong style="color:#0dcaf0;"> Günlük Fiyatı :</strong> &nbsp; &nbsp;&nbsp; <strong>{{car.dailyPrice}}₺</strong></li>
+      
+    </ul>
+    <div class="card-body">
+      <a  class="btn btn-info" routerLink="/cars/cardetails/{{car.carId}}">Araç Detayları</a>
+        &nbsp;
+      <a  class="btn btn-success " >Kirala</a>
+      <a  class="btn btn-warning mt-3 " routerLink="/cars/update/{{car.carId}}" style="align-items:stretch ;" >Güncelle</a>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="dataLoaded == false" class="spinner-grow" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded == true" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Araç No</th>
+      <th scope="col">Model</th>
+      <th scope="col">Marka</th>
+      <th scope="col">Renk</th>
+      <th scope="col">Resim</th>
+      <th scope="col">Günlük Fiyat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{ car.carId }}</td>
+      <td>{{ car.carDescription }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ car.carImagePath }}</td>
+      <td>{{ car.dailyPrice }}</td>
+    </tr>
+  </tbody>
+</table> -->

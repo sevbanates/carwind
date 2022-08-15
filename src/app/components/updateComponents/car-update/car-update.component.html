@@ -1,0 +1,86 @@
+<div class="content mt-4">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Araç Güncelle</h5>
+        </div>
+        <div>
+          <div class="card-body">
+            <form [formGroup]="carUpdateForm">
+              <div class="mb-3">
+                <label for="id">Araç adı</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="description"
+                    formControlName="id"
+                    class="form-control"
+                    placeholder={{currentCar.id}}
+                  />
+                </div>
+                <label for="description">Araç adı</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="description"
+                    formControlName="description"
+                    class="form-control"
+                    placeholder={{currentCar.description}}
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="brandId">Marka ID'si</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="brandId"
+                    formControlName="brandId"
+                    class="form-control"
+                    placeholder={{currentCar.brandId}}
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="colorId">Renk ID'si</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="colorId"
+                    formControlName="colorId"
+                    class="form-control"
+                    placeholder={{currentCar.colorId}}
+                  />
+                </div>
+              </div>
+  
+              <label for="modelYear">Model Yılı</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="modelYear"
+                  formControlName="modelYear"
+                  class="form-control"
+                  placeholder={{currentCar.modelYear}}
+                />
+              </div>
+              <label for="dailyPrice">Günlük Fiyatı</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="dailyPrice"
+                  formControlName="dailyPrice"
+                  class="form-control"
+                  placeholder={{currentCar.dailyPrice}}
+                />
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+              <button class="btn btn-fill btn-primary" (click)="update()" >Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

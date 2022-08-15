@@ -1,0 +1,52 @@
+<body class="text-center bg-dark mt-4">
+    <main class="form-signin w-100 m-auto">
+      <form [formGroup]="registerForm">
+        <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+        <h1 class="h3 mb-3 fw-normal text-light">Giriş Yap</h1>
+        <div class="form-floating">
+            <input
+              formControlName="firstName"
+              type="email"
+              class="form-control "
+              id="floatingInput"
+              placeholder="adınız..."
+            />
+            <label for="floatingInput">Adınız</label>
+          </div>
+        <div class="form-floating ">
+            <input
+              formControlName="lastName"
+              type="email"
+              class="form-control "
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Soyadınız</label>
+          </div>
+        <div class="form-floating">
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">E-posta</label>
+        </div>
+        <div class="form-floating">
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Parola</label>
+        </div>
+  
+        <button class="w-100 btn btn-lg btn-primary" (click)="register()" type="submit">
+          Kayıt ol
+        </button>
+      </form>
+    </main>
+  </body>

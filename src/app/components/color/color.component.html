@@ -1,0 +1,24 @@
+<!-- <select class="bg-dark text-info mt-4" name="cars" id="cars">
+    <option value="araç seçin"  class="text-secondary">araçlar</option>
+     <option 
+       
+     class="text-info" 
+     *ngFor="let color of colors"  
+     [value]="color.name"><a (click)="setCurrentColor(color)" routerLink="cars/color/{{color.name}}" >{{color.name}}</a></option>
+  </select> -->
+
+
+<ul class="list-group">
+    <li (click)="setCurrentDeletedColor()" [class]="getAllColorClass()" routerLink="/cars">Tüm Renkler</li>
+    <div *ngFor="let color of colors" >
+    <li (click)="setCurrentColor(color)"
+    routerLink="cars/color/{{color.name}}" 
+    
+    [class]="getCurrentColorClass(color)"
+    class="col-md-8"
+    style="display:inline-block" >
+        {{color.name}}
+    </li>
+    <li class="list-group-item bg-warning btn btn-warning col-md-4" style="display:inline-block  ;" routerLink="/colors/update/{{color.id}}">Güncelle</li>
+</div>
+</ul>
